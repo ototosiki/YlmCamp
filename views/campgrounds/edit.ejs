@@ -2,7 +2,7 @@
 <div class="row">
   <h1 class="text-center">キャンプ場の新規登録</h1>
   <div class="offset-3 col-6">
-    <form action="/campgrounds" method="POST">
+    <form action="/campgrounds" method="POST" novalidate class="validated-form">
       <div class="mb-3">
         <label class="form-label" for="title">タイトル</label>
         <input
@@ -10,8 +10,11 @@
           type="text"
           name="campground[title]"
           id="title"
-          value="<%= campground.title %>"
+          value="<%= campground.title %>" required
         />
+        <div class="valid-feedback">
+          OK!
+        </div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="location">場所</label>
@@ -20,8 +23,11 @@
           type="text"
           name="campground[location]"
           id="location"
-          value="<%= campground.location %>"
+          value="<%= campground.location %>" required
         />
+        <div class="valid-feedback">
+          OK!
+        </div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="image">画像URL</label>
@@ -30,7 +36,7 @@
           type="text"
           name="campground[image]"
           id="image"
-          value="<%= campground.image %>"
+          value="<%= campground.image %>" required
         />
       </div>
       <div class="mb-3">
@@ -45,7 +51,7 @@
             aria-label="Username"
             aria-describedby="price-label"
             name="campground[price]"
-            value="<%= campground.price %>"
+            value="<%= campground.price %>" required
           />
         </div>
       </div>
@@ -55,7 +61,7 @@
           class="form-control"
           type="text"
           name="campground[description]"
-          id="description"
+          id="description" required
         >
 <%= campground.description %></textarea
         >
