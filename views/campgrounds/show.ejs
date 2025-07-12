@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>詳細ページ</title>
-</head>
-<body>
+<% layout('/layouts/boilerplate') -%>
     <h1><%= campground.title %></h1>
     <h2><%= campground.location %></h2>
     <footer>
         <a href="/campgrounds/<%= campground._id %>/edit">編集する</a>
         <p>
-            <form action="/campgrounds/<%= campground._id %>?_method=delete" method="POSt">
+            <form action="/campgrounds/<%= campground._id %>?_method=delete" method="POST">
                 <button>削除する</button>
             </form>
         </p>
@@ -19,5 +12,3 @@
             <a href="/campgrounds">一覧に戻る</a>
         </p>
     </footer>
-</body>
-</html>

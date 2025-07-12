@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>編集画面</title>
-  </head>
-  <body>
+<% layout('/layouts/boilerplate') -%>
     <h1>キャンプ場の編集</h1>
     <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
       <div>
@@ -19,5 +12,3 @@
       <button>更新する</button>
     </form>
     <a href="/campgrounds">一覧に戻る</a>
-  </body>
-</html>
